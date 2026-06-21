@@ -5,78 +5,112 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #0f1123;
-    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #0b0c10;
+    font-family: 'Segoe UI', sans-serif;
     color: #ffffff;
-    overflow: hidden;
 }
 
 .container {
     text-align: center;
-    padding: 30px;
-    z-index: 1;
-}
-
-.profile-img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid #00d2d3;
-    object-fit: cover;
-    margin-bottom: 20px;
-    box-shadow: 0 0 15px #00d2d3;
+    padding: 20px;
 }
 
 .neon-glow h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     margin: 0;
     color: #fff;
-    text-shadow: 0 0 10px #00d2d3, 0 0 20px #00d2d3, 0 0 40px #00a8ff;
-    letter-spacing: 2px;
+    text-shadow: 0 0 10px #00f2fe, 0 0 20px #00f2fe, 0 0 40px #4facfe;
 }
 
 .tagline {
-    font-size: 1.3rem;
-    color: #f5f6fa;
+    font-size: 1.2rem;
+    color: #66fcf1;
     margin-top: 10px;
     margin-bottom: 40px;
-    text-transform: uppercase;
-    letter-spacing: 4px;
+    letter-spacing: 3px;
 }
 
 .interactive-box {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 35px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 40px;
     border-radius: 20px;
     max-width: 500px;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.7);
 }
 
 #quote {
     font-style: italic;
     line-height: 1.8;
     font-size: 1.2rem;
-    color: #dcdde1;
-    min-height: 60px;
+    color: #c5c6c7;
+    transition: opacity 0.2s ease;
 }
 
 button {
     background: transparent;
-    color: #00d2d3;
-    border: 2px solid #00d2d3;
-    padding: 10px 25px;
-    font-size: 0.9rem;
+    color: #66fcf1;
+    border: 2px solid #66fcf1;
+    padding: 12px 25px;
+    font-size: 0.95rem;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 30px;
     cursor: pointer;
-    margin-top: 20px;
+    margin: 10px;
     transition: all 0.3s ease;
 }
 
 button:hover {
-    background: #00d2d3;
-    color: #0f1123;
-    box-shadow: 0 0 15px #00d2d3;
+    background: #66fcf1;
+    color: #0b0c10;
+    box-shadow: 0 0 15px #66fcf1;
+}
+
+.special-btn {
+    border-color: #00f2fe;
+    color: #00f2fe;
+}
+
+.special-btn:hover {
+    background: #00f2fe;
+    color: #0b0c10;
+    box-shadow: 0 0 15px #00f2fe;
+}
+
+/* Neon Modal */
+.neon-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(11, 12, 16, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.neon-modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.neon-modal-content {
+    background: #1f2833;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 80%;
+    border: 2px solid #00f2fe;
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.3);
+}
+
+.neon-modal-content h2 {
+    color: #00f2fe;
+    margin-top: 0;
 }
