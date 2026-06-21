@@ -7,24 +7,24 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="neon-glow">
-            <h1>HAPPY FATHER'S DAY</h1>
-            <p class="tagline">My Father, My Hero</p>
-        </div>
-
-        <div class="interactive-box">
+    <div class="card">
+        <div class="heart-icon">👑</div>
+        <h1>Happy Father's Day!</h1>
+        <div class="quote-container">
             <p id="quote">"Behind every great daughter/son is a truly amazing father."</p>
-            <button onclick="changeQuote()">Next Message ✨</button>
-            <button onclick="openNeonModal()" class="special-btn">Special Surprise 🎁</button>
+        </div>
+        
+        <div class="btn-group">
+            <button onclick="changeQuote()" class="secondary-btn">Next Message ✨</button>
+            <button onclick="toggleModal(true)">Special Surprise 🎁</button>
         </div>
     </div>
 
-    <div id="neonModal" class="neon-modal-overlay">
-        <div class="neon-modal-content">
+    <div id="customModal" class="modal-overlay">
+        <div class="modal-content">
             <h2>You are irreplaceable! 🥇</h2>
-            <p>Thank you for teaching me how to stand on my own feet and believe in myself. Happy Father's Day!</p>
-            <button onclick="closeNeonModal()">Back</button>
+            <p>Thank you for teaching me how to stand on my own feet and believe in myself. Happy Father's Day, Papa! ❤️</p>
+            <button class="close-btn" onclick="toggleModal(false)">Close</button>
         </div>
     </div>
 
@@ -47,12 +47,13 @@
             }, 200);
         }
 
-        function openNeonModal() {
-            document.getElementById('neonModal').classList.add('active');
-        }
-
-        function closeNeonModal() {
-            document.getElementById('neonModal').classList.remove('active');
+        function toggleModal(show) {
+            const modal = document.getElementById('customModal');
+            if (show) {
+                modal.classList.add('active');
+            } else {
+                modal.classList.remove('active');
+            }
         }
     </script>
 </body>
