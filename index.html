@@ -15,7 +15,16 @@
 
         <div class="interactive-box">
             <p id="quote">"Behind every great daughter/son is a truly amazing father."</p>
-            <button onclick="changeQuote()">Change Message ✨</button>
+            <button onclick="changeQuote()">Next Message ✨</button>
+            <button onclick="openNeonModal()" class="special-btn">Special Surprise 🎁</button>
+        </div>
+    </div>
+
+    <div id="neonModal" class="neon-modal-overlay">
+        <div class="neon-modal-content">
+            <h2>You are irreplaceable! 🥇</h2>
+            <p>Thank you for teaching me how to stand on my own feet and believe in myself.</p>
+            <button onclick="closeNeonModal()">Back</button>
         </div>
     </div>
 
@@ -30,7 +39,20 @@
         
         function changeQuote() {
             index = (index + 1) % quotes.length;
-            document.getElementById('quote').innerText = quotes[index];
+            const quoteEl = document.getElementById('quote');
+            quoteEl.style.opacity = 0;
+            setTimeout(() => {
+                quoteEl.innerText = quotes[index];
+                quoteEl.style.opacity = 1;
+            }, 200);
+        }
+
+        function openNeonModal() {
+            document.getElementById('neonModal').classList.add('active');
+        }
+
+        function closeNeonModal() {
+            document.getElementById('neonModal').classList.remove('active');
         }
     </script>
 </body>
